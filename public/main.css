@@ -102,6 +102,7 @@ main {
 h1 {
     position: relative;
     font-size: 50px;
+    text-align: center;
 }
 
 .form-container h1 span {
@@ -178,6 +179,14 @@ section {
     padding: 10px;
 }
 
+.welcome{
+    margin-bottom: 40px;
+    border-bottom: steelblue 10px solid;
+}
+#instructions h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
 #instructions {
     width: 90%;
     display: flex;
@@ -200,9 +209,6 @@ section {
     cursor: pointer;
 }
 
-#instructions h2 {
-    text-align: left;
-}
 
 #lorem {
     width: 80%;
@@ -298,6 +304,7 @@ a:visited {
 .profile-grid, .profile-grid-user {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     background-color: #ddd;
     margin-bottom: 8%;
@@ -493,7 +500,8 @@ h2 {
     justify-content: space-evenly;
     align-items: center;
     top: 5%;
-    left: 20%;
+    left: 50%; 
+    transform: translate(-50%, 0); 
     height: 150px;
     z-index: 3;
     width: 70%;
@@ -507,8 +515,9 @@ h2 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 50%;
     height: 40%;
     background-color: white;
@@ -547,15 +556,17 @@ h2 {
     color: white;
     position: absolute;
     bottom: 5%;
-    left: 50%;
+    left: 50%; 
+    transform: translate(-50%, 0); 
     width: 100px;
     height: 100px;
     z-index: 2;
 }
 
 /* calendar styling */
+
 #calendar {
-    width: 80vh;
+    width: 100vh;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -565,7 +576,7 @@ h2 {
 }
 
 #week {
-    width: 80vh;
+    width: 100vh;
     height: 60px;
     display: flex;
     flex-direction: column;
@@ -624,4 +635,101 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* ---------------------------------------------------
+                     MEDA QUERIES                
+--------------------------------------------------- */
+/* LANDING */
+
+
+
+
+@media (max-width: 940px){
+    .main{
+        width: 100%;
+    }
+    /* login */
+    .form-container{
+        width: 95%;
+    }
+    /* navbar */
+
+    .nav1 img{
+        display: none;
+    }
+
+    /* Dashbord */
+    .mobile-hero, #mobile-hero{
+        display: none;
+    }
+
+    /* users pages */
+    .userh2{
+        display: none;
+    }
+    .hero-walker{
+        flex-direction: column;
+    }
+    .profile-card img{
+        min-width: 300px;
+        min-height: 300px;
+        height: 300px;
+        width: 300px;
+    }
+    /* dogs pages */
+    #calendar-group{
+        overflow: auto;
+    }
+    #hero{
+        width: 85vw;
+        height: auto;
+    }
+    #feature{
+        flex-direction: column;
+    }
+    #feature article{
+        font-size: 22px;
+    }
+    .bigwindow, .bigwindow img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 750px){
+    .landing-btns button{
+        height: 40px;
+        font-size: 12px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    .awards-container{
+        width: 90%;
+    }
+    .jumbotron{
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px){
+    nav{
+        text-align: center;
+    }
+    .form-container{
+        width: 100%;
+    }
+    main{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .user-container{
+        width: 95%;
+    }
+    .hero-walker{
+        flex-wrap: nowrap;
+        padding: 0;
+    }
 }
