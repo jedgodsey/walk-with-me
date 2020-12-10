@@ -53,7 +53,7 @@ router.get('/:user/', isLoggedIn, (req, res) => {
 })
 
 // render dashboard upon logging in
-router.get('/:user/dashboard', isLoggedIn, (req,res) => {
+router.get('/:user/dashboard', isLoggedIn, isCurrentUser, (req,res) => {
     db.Dog.find({schedule: {$in: `${req.params.user}`}}, (err, foundDogs) => {
         if (err) return console.log(err);
         res.render('users/dashboard', {
